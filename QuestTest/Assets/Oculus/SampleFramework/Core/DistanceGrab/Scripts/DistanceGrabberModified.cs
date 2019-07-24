@@ -9,6 +9,7 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -27,6 +28,9 @@ namespace OculusSampleFramework
         // Radius of sphere used in spherecast from hand along forward ray to find target object.
         [SerializeField]
         public Color m_focusColor;
+
+        [SerializeField]
+        public GameObject firePrefab;
 
         // Radius of sphere used in spherecast from hand along forward ray to find target object.
         [SerializeField]
@@ -79,6 +83,7 @@ namespace OculusSampleFramework
         protected Collider m_targetCollider;
 
         bool m_canScaleObjects;
+        bool isOnFire = false;
         float m_debounceTime;
 
         protected override void Start()
@@ -227,6 +232,10 @@ namespace OculusSampleFramework
                 ((DistanceGrabbableFloater)m_grabbedObj).Shrink();
                 m_canScaleObjects = false;
             }
+            else if (OVRInput.Get(OVRInput.RawButton.B) && !m_grabbedObj.isOnFire)
+            {
+                SetOnFire(m_grabbedObj);
+            }
 
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
             Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
@@ -249,6 +258,12 @@ namespace OculusSampleFramework
             }
             grabbedRigidbody.MovePosition(grabbablePosition);
             grabbedRigidbody.MoveRotation(grabbableRotation);
+        }
+
+        public void SetOnFire(OVRGrabbable parent)
+        {
+            Instantiate(firePrefab, parent.transform);
+            parent.isOnFire = true;
         }
 
         static private DistanceGrabbable HitInfoToGrabbable(RaycastHit hitInfo)

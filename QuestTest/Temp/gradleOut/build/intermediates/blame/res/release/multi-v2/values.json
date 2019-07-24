@@ -1,31 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/troymanchester/Desktop/unity/QuestTest/Temp/gradleOut/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
+            "outputFile": "C:\\Users\\arkorin\\unity-vr-hack\\QuestTest\\Temp\\gradleOut\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "/Users/troymanchester/.gradle/caches/transforms-2/files-2.1/d5de2a5770d23a0a7bbdf9b4bde2e9a2/res/values/values.xml",
-                    "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "106",
-                        "endColumns": "43",
-                        "endOffsets": "145"
-                    }
-                },
-                {
-                    "source": "/Users/troymanchester/Desktop/unity/QuestTest/Temp/gradleOut/src/main/res/values/strings.xml",
+                    "source": "C:\\Users\\arkorin\\unity-vr-hack\\QuestTest\\Temp\\gradleOut\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "2",
-                        "startOffsets": "53",
+                        "startOffsets": "55",
                         "endColumns": "48",
-                        "endOffsets": "99"
+                        "endOffsets": "101"
                     },
                     "to": {
                         "startLines": "2",
@@ -36,11 +21,31 @@
                     }
                 },
                 {
-                    "source": "/Users/troymanchester/Desktop/unity/QuestTest/Temp/gradleOut/src/main/res/values/styles.xml",
+                    "source": "C:\\Users\\arkorin\\.gradle\\caches\\transforms-2\\files-2.1\\029044a77d6f37951e028d2544ec949d\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "-1,-1,-1",
-                        "startColumns": "-1,-1,-1",
-                        "startOffsets": "-1,-1,-1"
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "41",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "106",
+                        "endColumns": "43",
+                        "endOffsets": "145"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\arkorin\\unity-vr-hack\\QuestTest\\Temp\\gradleOut\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "5,2,7",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "190,53,288",
+                        "endLines": "6,4,10",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "286,188,513"
                     },
                     "to": {
                         "startLines": "4,6,9",

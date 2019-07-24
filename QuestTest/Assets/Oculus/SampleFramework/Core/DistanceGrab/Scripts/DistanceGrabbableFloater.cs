@@ -24,6 +24,7 @@ namespace OculusSampleFramework
         Renderer m_renderer;
         MaterialPropertyBlock m_mpb;
 
+        public GameObject firePrefab;
         /*public bool InRange
         {
             get { return m_inRange; }
@@ -48,6 +49,7 @@ namespace OculusSampleFramework
 
         protected override void Start()
         {
+            Console.WriteLine("Start");
             base.Start();
             m_crosshair = gameObject.GetComponentInChildren<GrabbableCrosshair>();
             m_renderer = gameObject.GetComponent<Renderer>();
@@ -56,6 +58,12 @@ namespace OculusSampleFramework
             RefreshCrosshair();
             m_mpb.SetColor(m_materialColorField, Color.white);
             m_renderer.SetPropertyBlock(m_mpb);
+
+            if(firePrefab)
+            {
+                Console.WriteLine("SET ON FIRE");
+                SetOnFire();
+            }
         }
 
         void RefreshCrosshair()
@@ -114,7 +122,12 @@ namespace OculusSampleFramework
                 return;
             transform.localScale -= new Vector3(tf.localScale.x / 1.001f, tf.localScale.y / 1.001f, tf.localScale.z / 1.001f);
         }
-        
+
+        public void SetOnFire()
+        {
+            Instantiate(firePrefab, gameObject.transform);
+        }
+
         /*public void SetColor(Color focusColor)
         {
             m_mpb.SetColor(m_materialColorField, focusColor);

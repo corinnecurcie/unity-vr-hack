@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.Troyboy.QuestTestGrab"
+    package="com.AriTesting123.QuestTestGrab"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="0.1" >
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="29" />
 
     <supports-screens
         android:anyDensity="true"
@@ -67,7 +67,7 @@
 
         <meta-data
             android:name="unity.build-id"
-            android:value="2efbd115-c6ca-4b78-851b-ff15d2a79a0e" />
+            android:value="267924c7-d235-45fa-b401-f15744db47ca" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />

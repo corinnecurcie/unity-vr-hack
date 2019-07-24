@@ -680,6 +680,7 @@ MonoBehaviour:
   m_controller: 1
   m_parentTransform: {fileID: 906020004}
   m_focusColor: {r: 0, g: 1, b: 0.9800043, a: 0}
+  firePrefab: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
   m_spherecastRadius: 0.15
   m_noSnapThreshhold: 5
   m_useSpherecast: 0
@@ -689,6 +690,88 @@ MonoBehaviour:
   m_grabObjectsInLayer: 8
   m_obstructionLayer: 0
   m_player: {fileID: 906020005}
+--- !u!1001 &739124832
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1000012825293744, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_Name
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15579307
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4799955
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08985415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014042746218, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000014063321366, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 73ea9d6c6c3480147ba658fc59d0afa4, type: 3}
+--- !u!1 &739124833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012825293744, guid: 73ea9d6c6c3480147ba658fc59d0afa4,
+    type: 3}
+  m_PrefabInstance: {fileID: 739124832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &739124834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739124833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51367bd86083b4e9ea6fb8f31f49e1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  m_materialColorField: 
 --- !u!1001 &775254099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1422,17 +1505,47 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320465938}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98d3d45b6af8c41859a3d19341a56da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
+  m_allowOffhandGrab: 0
   m_snapPosition: 0
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: 
+--- !u!114 &1320465940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320465938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d0ec55bb0ef46f6bb6e0acb2f63a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabBegin: 0.55
+  grabEnd: 0.35
+  m_parentHeldObject: 0
+  m_gripTransform: {fileID: 0}
+  m_grabVolumes: []
+  m_controller: 0
+  m_parentTransform: {fileID: 0}
+  m_focusColor: {r: 0, g: 0, b: 0, a: 0}
+  firePrefab: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
+  m_spherecastRadius: 0
+  m_noSnapThreshhold: 5
+  m_useSpherecast: 0
+  m_preventGrabThroughWalls: 0
+  m_objectPullVelocity: 10
+  m_maxGrabDistance: 0
+  m_grabObjectsInLayer: 0
+  m_obstructionLayer: 0
+  m_player: {fileID: 0}
 --- !u!4 &1433348463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
@@ -1481,7 +1594,7 @@ Transform:
   - {fileID: 1800472820}
   - {fileID: 857707721}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800472819
 GameObject:
@@ -1546,7 +1659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809586553
 MonoBehaviour:
@@ -1577,26 +1690,6 @@ PrefabInstance:
     - target: {fileID: 1173658494909946, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_Layer
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
-        type: 3}
-      propertyPath: m_parentTransform
-      value: 
-      objectReference: {fileID: 906020004}
-    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
-        type: 3}
-      propertyPath: m_player
-      value: 
-      objectReference: {fileID: 906020005}
-    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
-        type: 3}
-      propertyPath: m_focusColor.g
-      value: 0.91764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
-        type: 3}
-      propertyPath: m_focusColor.b
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1636,6 +1729,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_parentTransform
+      value: 
+      objectReference: {fileID: 906020004}
+    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 906020005}
+    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_focusColor.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_focusColor.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1091948866413652, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
@@ -2003,6 +2116,7 @@ MonoBehaviour:
   m_controller: 2
   m_parentTransform: {fileID: 906020004}
   m_focusColor: {r: 0, g: 0.9806142, b: 1, a: 1}
+  firePrefab: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
   m_spherecastRadius: 0.15
   m_noSnapThreshhold: 5
   m_useSpherecast: 0

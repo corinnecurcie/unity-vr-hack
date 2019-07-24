@@ -30,8 +30,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.1'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -40,8 +40,8 @@ android {
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 28
-        applicationId 'com.Troyboy.QuestTestGrab'
+        targetSdkVersion 29
+        applicationId 'com.AriTesting123.QuestTestGrab'
         ndk {
             abiFilters 'armeabi-v7a'
         }
