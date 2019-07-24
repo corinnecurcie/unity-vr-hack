@@ -33,7 +33,9 @@ namespace OculusSampleFramework
                 RefreshCrosshair();
             }
         }*/
+
         bool m_inRange;
+        public GameObject firePrefab;
 
         /*public bool Targeted
         {
@@ -114,7 +116,22 @@ namespace OculusSampleFramework
                 return;
             transform.localScale -= new Vector3(tf.localScale.x * 0.1f, tf.localScale.y * 0.1f, tf.localScale.z * 0.1f);
         }
-        
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            var otherObject = collision.gameObject.GetComponent<OVRGrabbable>();
+            if (!otherObject.isOnFire && gameObject.GetComponent<OVRGrabbable>().isOnFire)
+            {
+                SetOnFire(otherObject);
+            }
+        }
+
+        public void SetOnFire(OVRGrabbable parent)
+        {
+            parent.flame = Instantiate(firePrefab, parent.transform);
+            parent.isOnFire = true;
+        }
+
         /*public void SetColor(Color focusColor)
         {
             m_mpb.SetColor(m_materialColorField, focusColor);

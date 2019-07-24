@@ -1256,7 +1256,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  flame: {fileID: 0}
+  isOnFire: 0
   m_materialColorField: 
+  firePrefab: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
 --- !u!1 &1037074512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1436,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  flame: {fileID: 0}
+  isOnFire: 0
   m_materialColorField: 
+  firePrefab: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388, type: 3}
 --- !u!4 &1433348463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
