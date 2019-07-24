@@ -24,6 +24,8 @@ namespace OculusSampleFramework
         Renderer m_renderer;
         MaterialPropertyBlock m_mpb;
 
+        public GameObject firePrefab;
+
         /*public bool InRange
         {
             get { return m_inRange; }
@@ -102,6 +104,21 @@ namespace OculusSampleFramework
             transform.localScale -= new Vector3(0, 0, (float)(tf.localScale.z - (tf.localScale.z * 0.1F)));
             m_grabbedBy = null;
             m_grabbedCollider = null;
+        }
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            var otherObject = collision.gameObject.GetComponent<OVRGrabbable>();
+            if (!otherObject.isOnFire && gameObject.GetComponent<OVRGrabbable>().isOnFire)
+            {
+                SetOnFire(otherObject);
+            }
+        }
+
+        public void SetOnFire(OVRGrabbable parent)
+        {
+            parent.flame = Instantiate(firePrefab, parent.transform);
+            parent.isOnFire = true;
         }
 
         /*public void SetColor(Color focusColor)

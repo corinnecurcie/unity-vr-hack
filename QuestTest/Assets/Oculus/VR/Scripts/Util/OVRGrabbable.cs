@@ -37,6 +37,8 @@ public class OVRGrabbable : MonoBehaviour
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
+
+    public GameObject flame = null;
     public bool isOnFire = false;
 
 	/// <summary>

@@ -232,10 +232,17 @@ namespace OculusSampleFramework
                 ((DistanceGrabbableFloater)m_grabbedObj).Shrink();
                 m_canScaleObjects = false;
             }
-            else if (OVRInput.Get(OVRInput.RawButton.B) && !m_grabbedObj.isOnFire)
+            else if (OVRInput.Get(OVRInput.RawButton.B))
             {
-                SetOnFire(m_grabbedObj);
-                m_grabbedObj.isOnFire = true;
+                if (!m_grabbedObj.isOnFire)
+                {
+                    SetOnFire(m_grabbedObj);
+                }
+                else
+                {
+                    ExtinguishFlame(m_grabbedObj);
+                }
+                
             }
 
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
@@ -273,7 +280,14 @@ namespace OculusSampleFramework
 
         public void SetOnFire(OVRGrabbable parent)
         {
-            Instantiate(firePrefab, parent.transform);
+            parent.flame = Instantiate(firePrefab, parent.transform);
+            parent.isOnFire = true;
+        }
+
+        public void ExtinguishFlame(OVRGrabbable parent)
+        {
+            Destroy(parent.flame);
+            parent.isOnFire = false;
         }
 
         protected bool FindTarget(out DistanceGrabbable dgOut, out Collider collOut)
@@ -404,6 +418,15 @@ namespace OculusSampleFramework
       protected override void OffhandGrabbed(OVRGrabbable grabbable)
         {
             base.OffhandGrabbed(grabbable);
+        }
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            var otherObject = collision.gameObject.GetComponent<OVRGrabbable>();
+            if(otherObject.isOnFire)
+            {
+                SetOnFire(otherObject);
+            }
         }
     }
 }
