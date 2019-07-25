@@ -23,7 +23,6 @@ namespace OculusSampleFramework
     [RequireComponent(typeof(Rigidbody))]
     public class DistanceGrabberModified : OVRGrabber
     {
-
         // Radius of sphere used in spherecast from hand along forward ray to find target object.
         [SerializeField]
         public Color m_focusColor;
